@@ -1,0 +1,26 @@
+.header{
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:blue;
+}
+
+img{
+    width: 100px;
+    height: auto;
+}
+
+
+input{
+    width: fit-content;
+    height: 35px;
+    border-radius: 20px;
+    border: none;
+    outline-offset: 5px;
+    outline: 2px solid blue;
+    padding: 0 12px;
+}
+input::placeholder{
+    text-align: center;
+}

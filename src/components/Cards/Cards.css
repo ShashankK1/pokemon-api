@@ -1,0 +1,9 @@
+.cards{
+    box-sizing: border-box;
+    padding-bottom: 32px;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit,minmax(260px, auto));
+    grid-gap: 24px;
+    grid-auto-flow: dense;
+}
