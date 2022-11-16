@@ -7,7 +7,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* border-radius: 5px; */
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 255, 0.02) 0px 1px 3px 0px, rgba(27, 31, 255, 0.15) 0px 0px 0px 1px;/* border-radius: 5px; */
 }
 /* img{
     width: 130px;
@@ -31,4 +32,8 @@
     display: flex;
     flex-direction: column;
     row-gap: 4px;
+}
+.card:hover img{
+    transform: scale(1.15);
+    transition-duration: 500ms;
 }

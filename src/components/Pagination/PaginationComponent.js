@@ -8,7 +8,6 @@ const PaginationComponent = (props) => {
         setActivePage(e);
         props.changeHandler(e);
     }
-    
     return (
         <div className='pagination'>
             <Pagination 

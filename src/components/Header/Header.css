@@ -20,7 +20,16 @@ input{
     outline-offset: 5px;
     outline: 2px solid blue;
     padding: 0 12px;
+    
 }
 input::placeholder{
     text-align: center;
+}
+.input img{
+    cursor:pointer;
+    height:25px;
+    width:auto;
+    position: relative;
+    left:-32px;
+    top:8px;
 }

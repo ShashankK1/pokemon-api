@@ -4,8 +4,7 @@ import empty from '../../Assets/images/empty.png'
 const Card = ({ image_url_front, image_url_back, name, height, weight }) => {
     const emptyStyleFront = {
         width: '60px',
-        height:'80px',
-        transform:"scaleX(-1)"
+        height:'80px'
     }
     const emptyStyleBack = {
         width: '60px',
