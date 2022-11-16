@@ -6,9 +6,12 @@ const Cards = ({props}) => {
     const cardItems = props.map(item=>{
         return <Card 
         key={item.info.id}
+        id={item.info.id}
         name={item.name} 
         image_url_front={item.info.sprites.front_default}
-        image_url_back={item.info.sprites.back_default}/>
+        image_url_back={item.info.sprites.back_default}
+        height={item.info.height}
+        weight={item.info.weight}/>
     })
     return (
     <div className='cards'>

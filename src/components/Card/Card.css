@@ -4,17 +4,31 @@
     width: 260px;
     height: 260px;
     padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     /* border-radius: 5px; */
 }
-img{
+/* img{
     width: 130px;
     height: 130px;
-}
+} */
 .img-container{
+    /* width: 260px; */
+    height: 130px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    background-color: antiquewhite;
+    align-items: center;
 }
 .poke-name{
+    text-align: center;
+    margin-top: 8px;
+}
+.stats{
+    margin-top: 8px;
+    margin-bottom: 16px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    row-gap: 4px;
 }

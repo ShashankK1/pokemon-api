@@ -6,3 +6,11 @@
     flex-direction: column;
     row-gap: 32px;
 }
+.pagination-box{
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 60px;
+    bottom: 0px;
+    
+}
