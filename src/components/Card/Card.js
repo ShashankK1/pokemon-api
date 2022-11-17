@@ -2,6 +2,7 @@ import React from 'react'
 import './Card.css'
 import empty from '../../Assets/images/empty.png'
 const Card = ({ image_url_front, image_url_back, name, height, weight }) => {
+    //Default styles when image Urls are NULL
     const emptyStyleFront = {
         width: '60px',
         height:'80px'

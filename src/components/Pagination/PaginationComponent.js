@@ -3,7 +3,9 @@ import './PaginationComponent.css'
 import { Pagination } from '@mantine/core'
 const PaginationComponent = (props) => {
     const count = parseInt(Math.ceil(props.count/10));
-    const [activePage, setActivePage] = useState(1);
+    const [activePage, setActivePage] = useState(1);//State for which page is active
+
+    //Lifts change in page by 1 level to App component
     const changeHandler = (e)=>{
         setActivePage(e);
         props.changeHandler(e);

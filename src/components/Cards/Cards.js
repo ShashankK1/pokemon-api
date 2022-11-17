@@ -2,7 +2,7 @@ import React from 'react'
 import Card from '../Card/Card'
 import './Cards.css'
 const Cards = ({props}) => {
-    // console.log(props);
+    // Map through all Pokemon Data given from props and convert it into an array og Card component
     const cardItems = props.map(item=>{
         return <Card 
         key={item.info.id}

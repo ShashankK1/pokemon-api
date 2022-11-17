@@ -8,22 +8,24 @@ import PaginationComponent from './components/Pagination/PaginationComponent';
 const App = () => {
     const basicUrl = "https://pokeapi.co/api/v2/pokemon";
     const [reset, setReset] = useState(false);
+    //For url state with respect to page selected
     const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon?limit=10&offset=0");
-    const [count, setCount] = useState(1);
-    const [pokemonData, setPokemonData] = useState([]);
-    const [err, setError] = useState('');
-    console.log("app");
+    const [count, setCount] = useState(1); //For total pokemons
+    const [pokemonData, setPokemonData] = useState([]);// For Pokemon Data state
+    const [err, setError] = useState(''); // For Error state
+
+    // searchHandler function will be called when we click on search icon
     const searchHandler = (e) => {
-        const searchUrl = basicUrl+'/'+e;
+        const searchUrl = basicUrl + '/' + e;
         setReset(true);
-        fetchSearchData(e,searchUrl);
+        fetchSearchData(e, searchUrl);
     }
 
+    // fetchData is a function which fetches Pokemon Data with respect to its paging
     const fetchData = async () => {
         setError('');
         let pokemonData = [];
         const jsonData = await axios.get(url);
-        // console.log(jsonData);
         const resultsArray = jsonData.data.results;
         setCount(jsonData.data.count);
         const myPokemonPromise = new Promise((res, rej) => {
@@ -49,37 +51,35 @@ const App = () => {
         });
 
         const poke = await myPokemonPromise;
-        // console.log(poke);
         setPokemonData(poke);
 
     }
 
+    // fetchSearchData is a function which is called when searchHandler is called
     const fetchSearchData = async (e, searchUrl) => {
-        try{
+        try {
 
             const jsonData = await axios.get(searchUrl);
             const Data = [{
                 name: e,
                 info: jsonData.data
             }]
-            // console.log(Data);
             setPokemonData(Data);
             setError('');
         }
-        catch(err){
-            if(err.response.status === 404){
+        catch (err) {
+            if (err.response.status === 404) {
                 setError("Invalid Search!");
             }
         }
-        // console.log(jsonData);
-        
-
     }
 
+    //Every time url changes that is new page has been clicked useEffect runs fetchData
     useEffect(() => {
         fetchData();
-    }, [ url ]);
+    }, [url]);
 
+    //changeHandler is a funcction which runs when there is a change in page
     const changeHandler = (e) => {
         setReset(false);
         let offset = (e * 10) - 10;
@@ -92,7 +92,6 @@ const App = () => {
     }
     return (
         <>
-        
             <div className='app'>
                 <header className='header-component'>
                     <Header err={err} handler={searchHandler} />

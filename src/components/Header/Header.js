@@ -3,10 +3,14 @@ import './Header.css'
 import pokemon_icon from '../../Assets/images/poke-icon.png';
 import searchIcon from '../../Assets/images/search.png';
 const Header = (props) => {
-  const [name, setName] = useState('');
+  const [name, setName] = useState('');//Input State
+
+  // Detection for change and setting state
   const changeHandler = (e) => {
     setName(e.target.value.trim());
   }
+
+  //lift props by 1 level to App component
   const searchHandler = () => {
     props.handler(name.toLowerCase());
     setName('');
