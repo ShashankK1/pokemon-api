@@ -7,7 +7,7 @@ const Cards = ({props}) => {
         return <Card 
         key={item.info.id}
         id={item.info.id}
-        name={item.name} 
+        name={item.info.name} 
         image_url_front={item.info.sprites.front_default}
         image_url_back={item.info.sprites.back_default}
         height={item.info.height}

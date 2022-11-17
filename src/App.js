@@ -20,7 +20,7 @@ const App = () => {
     }
 
     const fetchData = async () => {
-        
+        setError('');
         let pokemonData = [];
         const jsonData = await axios.get(url);
         // console.log(jsonData);
@@ -64,6 +64,7 @@ const App = () => {
             }]
             // console.log(Data);
             setPokemonData(Data);
+            setError('');
         }
         catch(err){
             if(err.response.status === 404){
@@ -77,7 +78,7 @@ const App = () => {
 
     useEffect(() => {
         fetchData();
-    }, [url]);
+    }, [ url ]);
 
     const changeHandler = (e) => {
         setReset(false);

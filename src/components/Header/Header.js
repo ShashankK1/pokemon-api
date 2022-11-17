@@ -19,8 +19,14 @@ const Header = (props) => {
       <div className='heading'>
 
       </div>
-      <div className='input'>
-        <input style={(props.err.length>0)?{outline:'2px solid red'}:{}} type="text" placeholder='Search' value={name} onChange={(e) => { changeHandler(e) }} />
+      <div className={(props.err.length>0)?'input inputErr':'input'}>
+        <input 
+        style={(props.err.length>0)?{outline:'2px solid red'}:{}} 
+        type="text" 
+        placeholder='Search' 
+        value={name} 
+        onChange={(e) => { changeHandler(e) }} />
+
         <img src={searchIcon} alt="search" onClick={searchHandler} />
       </div>
     </div>

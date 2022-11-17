@@ -25,6 +25,14 @@ input{
 input::placeholder{
     text-align: center;
 }
+.inputErr::after{
+    content: 'invalid search!';
+    color: red;
+    display: block;
+    position: absolute;
+    margin-top:6px;
+    margin-left:50px;
+}
 .input img{
     cursor:pointer;
     height:25px;
